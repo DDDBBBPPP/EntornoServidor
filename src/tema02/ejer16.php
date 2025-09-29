@@ -1,17 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <title>Ej-16</title>
     <meta charset="utf-8"/>
     <style>
-        body { font-family: Arial, sans-serif; margin: 20px; }
-        h1 { text-align: center; margin-bottom: 30px; }
-        .serie { display: flex; margin-bottom: 25px; align-items: flex-start; }
-        .serie img { width: 120px; margin-right: 15px; border-radius: 8px; }
-        .info { max-width: 600px; }
-        .titulo { font-size: 20px; font-weight: bold; }
-        .plataforma { color: gray; font-size: 14px; margin-bottom: 5px; }
-        .nota { font-weight: bold; }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .serie {
+            display: flex;
+            margin-bottom: 25px;
+            align-items: flex-start;
+        }
+
+        .serie img {
+            width: 120px;
+            margin-right: 15px;
+            border-radius: 8px;
+        }
+
+        .info {
+            max-width: 600px;
+        }
+
+        . titulo {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .plataforma {
+            color: gray;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .nota {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -19,6 +51,8 @@
 <h1>Ejer-16</h1>
 
 <?php
+
+// AQUI PUEDES PONER include info.php, y meter lo que tengas en otro archivo
 $series = [
         [
                 "titulo" => "Peaky Blinders",
