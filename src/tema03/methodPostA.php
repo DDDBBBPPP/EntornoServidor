@@ -41,8 +41,8 @@
     <br/>
 
 
-    <label for="boton">Dale</label>
-    <input id="boton" type="submit" name="boton"/>
+    <button>Dale</button>
+
 
     <br/>
 

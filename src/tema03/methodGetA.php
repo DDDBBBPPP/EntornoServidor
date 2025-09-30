@@ -36,8 +36,8 @@
     <br/>
 
 
-    <label for="boton">Dale</label>
-    <input id="boton" type="submit" name="boton"/>
+    <button type="submit" name="boton">Dale</button>
+
 
     <br/>
 
