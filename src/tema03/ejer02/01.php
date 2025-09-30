@@ -9,10 +9,16 @@
 <body>
 <div class="container">
 
-    <form action="02.php" method="get">
+    <form action="02.php" method="post">
         <br/>
-        <label for="primero">Introduce los euros a convertir</label>
-        <input id="primero" type="number" name="primero" autofocus required/>
+        <label for="moneda">Introduce los euros a convertir</label>
+        <input id="moneda" type="number" name="moneda" autofocus required/>
+        <select id="hola" name="cambio">
+            <option value="peseta">Peseta</option>
+            <option value="dolares">Dólares</option>
+            <option value="libra">Libra esterlina</option>
+            <option value="yen">Yen Japonés</option>
+        </select>
         <br/>
         <button>Cambiar</button>
     </form>
