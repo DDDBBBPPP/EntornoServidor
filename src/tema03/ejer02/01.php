@@ -9,21 +9,37 @@
 <body>
 <div class="container">
 
-    <form action="02.php" method="post">
+    <form action="02B.php" method="post">
         <br/>
-        <label for="moneda">Introduce los euros a convertir</label>
-        <input id="moneda" type="number" name="moneda" autofocus required/>
-        <select id="hola" name="cambio">
-            <option value="peseta">Peseta</option>
-            <option value="dolares">Dólares</option>
-            <option value="libra">Libra esterlina</option>
-            <option value="yen">Yen Japonés</option>
-        </select>
-        <br/>
-        <button>Cambiar</button>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <label for="moneda" class="form-label">Introduce los euros a convertir</label>
+                <input id="moneda" type="number" step="any" name="moneda" class="form-control" autofocus required>
+            </div>
+        </div>
+
+        <!-- EL STEP ANY ES PARA QUE PERMITA DECIMALES -->
+        <div class="row mt-3">
+            <div class="col-12">
+                <label for="hola" class="form-label">Selecciona la moneda</label>
+                <select id="hola" name="cambio" class="form-select">
+                    <option value="peseta">Peseta</option>
+                    <option value="dolares">Dólares</option>
+                    <option value="libra">Libra esterlina</option>
+                    <option value="yen">Yen Japonés</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row mt-3">
+            <div class="col-12">
+                <button class="btn btn-dark" type="submit">Cambiar</button>
+            </div>
+        </div>
+
     </form>
 
 </div>
 </body>
-
 </html>
