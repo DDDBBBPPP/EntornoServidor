@@ -18,10 +18,10 @@ session_start();
                     <a class="nav-link" href="../menu.php">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="opt1.php">Agregar usuario</a>
+                    <a class="nav-link active" aria-current="page" href="#">Agregar usuario</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Mostrar usuario</a>
+                    <a class="nav-link" href="opt2.php">Mostrar usuario</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="opt3.php">Buscar usuarios</a>
@@ -42,6 +42,6 @@ session_start();
         </div>
     </div>
 </nav>
-<h1>OPCION 2</h1>
+<h1>OPCION 1</h1>
 </body>
 </html>
