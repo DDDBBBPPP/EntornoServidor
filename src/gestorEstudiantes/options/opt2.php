@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -55,8 +60,8 @@ session_start();
     else:
         ?>
 
-        <table class="table">
-            <thead>
+        <table class="table table-bordered table-striped text-center align-middle" style="table-layout: fixed; width: 100%;">
+            <thead class="table-light">
             <tr>
                 <th class="text-center">Alumno</th>
                 <th class="text-center">Notas</th>
@@ -69,7 +74,7 @@ session_start();
             foreach($_SESSION["listado"] as $item):
                 echo "<tr>";
                 echo "<td>{$item["nombre"]}</td>";
-                echo "<td>{$item["notas"][0]}, {$item["notas"][1]}, {$item["notas"][2]}</td>";
+                echo "<td>" . implode(", ", $item["notas"]) . "</td>";
                 echo "<td>{$item["promedio"]}</td>";
                 echo "<td>{$item["estado"]}</td>";
                 echo "</tr>";
@@ -79,26 +84,6 @@ session_start();
         </table>
     <?php endif;
     ?>
-
-    <form method="get">
-        <div class="row mt-3">
-            <div class="col-2">
-                <label for="nums" class="form-label">Introduzca los numeros separados por coma</label>
-            </div>
-            <div class="col-2">
-
-
-                <input id="nums" type="text" name="nums"/>
-            </div>
-        </div>
-        <br/>
-
-        <br/>
-
-        <button class="btn btn-primary">Resuelve</button>
-
-    </form>
-
 </div>
 </body>
 </html>

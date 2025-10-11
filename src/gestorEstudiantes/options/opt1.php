@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 
 $lleno = $_GET ?? null;
 $notas = isset($_GET["notas"]) ? explode(",", rtrim($_GET["notas"], ",")) : null;

@@ -1,5 +1,10 @@
 <?php
 session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: ../login.php");
+    exit;
+}
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -42,6 +47,42 @@ session_start();
         </div>
     </div>
 </nav>
-<h1>OPCION 3</h1>
+    <div class="container vh-100 d-flex justify-content-center align-items-center">
+        <div class="card shadow p-4" style="max-width: 400px; width: 100%;">
+            <h3 class="text-center mb-4">Búsqueda de estudiantes</h3>
+
+            <form method="post">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Introduzca el nombre del estudiante</label>
+                    <input id="nombre" type="text" name="nombre" class="form-control" placeholder="Ingrese un nombre"
+                           required>
+                </div>
+
+                <div class="d-grid">
+                    <button class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<?php if(!empty($_GET)):
+    $aBuscar = $_GET["nombre"];
+    $encontrado = false;
+    $mostrado = false;
+    foreach ($_SESSION["listado"] as $item):
+        if ($aBuscar == $item["nombre"]) $encontrado = true;
+        if ($encontrado):
+            echo implode(", ", $item);
+            $encontrado = false;
+            $mostrado = true;
+        endif;
+        break;
+    endforeach;
+    if (!$mostrado):?>
+        <div class="alert alert-danger mt-4" role="alert">
+            No existe tal usuario. Prueba también a escribir el nombre correctamente.
+        </div>
+    <?php endif;
+    endif;
+?>
 </body>
 </html>
