@@ -42,6 +42,63 @@ session_start();
         </div>
     </div>
 </nav>
-<h1>OPCION 2</h1>
+<div class="container">
+
+    <?php
+    if (empty($_SESSION["listado"])):?>
+        <div class="container mt-4">
+            <div class="alert alert-danger" role="alert">
+                No hay alumnos en el listado todavía.
+            </div>
+        </div>
+    <?php
+    else:
+        ?>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th class="text-center">Alumno</th>
+                <th class="text-center">Notas</th>
+                <th class="text-center">Promedio</th>
+                <th class="text-center">Estado</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php
+            foreach($_SESSION["listado"] as $item):
+                echo "<tr>";
+                echo "<td>{$item["nombre"]}</td>";
+                echo "<td>{$item["notas"][0]}, {$item["notas"][1]}, {$item["notas"][2]}</td>";
+                echo "<td>{$item["promedio"]}</td>";
+                echo "<td>{$item["estado"]}</td>";
+                echo "</tr>";
+            endforeach;
+            ?>
+            </tbody>
+        </table>
+    <?php endif;
+    ?>
+
+    <form method="get">
+        <div class="row mt-3">
+            <div class="col-2">
+                <label for="nums" class="form-label">Introduzca los numeros separados por coma</label>
+            </div>
+            <div class="col-2">
+
+
+                <input id="nums" type="text" name="nums"/>
+            </div>
+        </div>
+        <br/>
+
+        <br/>
+
+        <button class="btn btn-primary">Resuelve</button>
+
+    </form>
+
+</div>
 </body>
 </html>
