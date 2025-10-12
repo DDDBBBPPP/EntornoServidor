@@ -12,9 +12,9 @@ $perfe = false;
 
 if ($notas && count($notas) == 3):
     if (
-            ($notas[0] >= 0 && $notas[0] <= 11) &&
-            ($notas[1] >= 0 && $notas[1] <= 11) &&
-            ($notas[2] >= 0 && $notas[2] <= 11)
+            ($notas[0] >= 0 && $notas[0] < 11) &&
+            ($notas[1] >= 0 && $notas[1] < 11) &&
+            ($notas[2] >= 0 && $notas[2] < 11)
     ) {
         $perfe = true;
     }
@@ -40,7 +40,8 @@ endif;
 <head>
     <meta charset="UTF-8">
     <title>Gestor de Documentos</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -88,7 +89,7 @@ endif;
         <?php if ($lleno != null && !$perfe): ?>
             <div class="alert alert-danger mt-4" role="alert">
                  Error: Verifica que hayas ingresado exactamente tres notas separadas por comas
-                y que cada una esté entre 0 y 11.
+                y que cada una esté entre 0 y 10.
             </div>
         <?php endif; ?>
     </form>

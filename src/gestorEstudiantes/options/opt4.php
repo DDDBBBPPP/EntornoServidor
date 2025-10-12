@@ -4,7 +4,21 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: ../login.php");
     exit;
 }
+if (!empty($_GET)):
+    $aBuscar = trim($_GET["nombre"]);
 
+    if (!empty($_SESSION["listado"])) {
+        foreach ($_SESSION["listado"] as $indice => $item) {
+            if (strcasecmp($aBuscar, $item["nombre"]) === 0) {
+                unset($_SESSION["listado"][$indice]);
+                $_SESSION["listado"] = array_values($_SESSION["listado"]);
+                break;
+            }
+        }
+    }
+    header("Location: ../menu.php");
+    exit;
+else:
 ?>
 <!doctype html>
 <html lang="es">
@@ -47,6 +61,22 @@ if (!isset($_SESSION["usuario"])) {
         </div>
     </div>
 </nav>
-<h1>OPCION 4</h1>
+<div class="container mt-5">
+    <div class="card shadow p-4 mx-auto" style="max-width: 400px;">
+        <h3 class="text-center mb-4">Borrado de estudiantes</h3>
+
+        <form method="get">
+            <div class="mb-3">
+                <label for="nombre" class="form-label">Introduzca el nombre del estudiante</label>
+                <input id="nombre" type="text" name="nombre" class="form-control" placeholder="Ingrese un nombre"
+                       required>
+            </div>
+
+            <div class="d-grid">
+                <button class="btn btn-primary">Buscar</button>
+            </div>
+        </form>
+    </div>
 </body>
+<?php endif; ?>
 </html>

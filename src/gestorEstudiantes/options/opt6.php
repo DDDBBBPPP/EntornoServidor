@@ -4,6 +4,9 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: ../login.php");
     exit;
 }
+$_SESSION["listado"] = [];
+header("Location: ../menu.php");
+exit;
 
 ?>
 <!doctype html>
@@ -47,6 +50,5 @@ if (!isset($_SESSION["usuario"])) {
         </div>
     </div>
 </nav>
-<h1>OPCION 6</h1>
 </body>
 </html>

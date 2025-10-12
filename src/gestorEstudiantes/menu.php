@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_POST["usuario"]))$_SESSION["usuario"] = $_POST["usuario"];
+if (isset($_POST["usuario"])) $_SESSION["usuario"] = $_POST["usuario"];
 ?>
 <!doctype html>
 <html lang="es">
@@ -11,10 +11,11 @@ if(isset($_POST["usuario"]))$_SESSION["usuario"] = $_POST["usuario"];
           integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <style>
         .padre > * {
-            text-align: center; /* equivale a text-center */
-            margin-top: 1rem;   /* equivale a mt-3 en Bootstrap */
+            text-align: center;
+            margin-top: 1rem;
         }
-        h5{
+
+        h5 {
             color: blue;
         }
     </style>
@@ -52,8 +53,8 @@ if(isset($_POST["usuario"]))$_SESSION["usuario"] = $_POST["usuario"];
         </div>
     </div>
 </nav>
-<div class="container padre" >
-    <h2>Buenas <span style="color:blue"><?=$_SESSION["usuario"]?></span>, elija una de las opciones</h2>
+<div class="container padre">
+    <h2>Buenas <span style="color:blue"><?= $_SESSION["usuario"] ?></span>, elija una de las opciones</h2>
     <h5>Agregar un nuevo estudiante</h5>
     <p>Se solicitará nombre y 3 notas separadas por comas. Se comprobará que las
         notas sean entre 0 y 10. Si no se hace correctamente, se indicará con un mensaje de error.
