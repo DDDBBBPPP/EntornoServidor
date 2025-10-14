@@ -19,6 +19,7 @@ if ($notas && count($notas) == 3):
         $perfe = true;
     }
 endif;
+    
 
 if ($perfe):
     $media = array_sum($notas) / 3;
@@ -30,8 +31,10 @@ if ($perfe):
             "promedio" => $media,
             "estado" => $state
     ];
+    //array_push($_SESSION["listado"],$alumno);
 
     header("Location: ../menu.php");
+    //exit(header("Location: ../menu.php"));
     exit;
 endif;
 ?>
