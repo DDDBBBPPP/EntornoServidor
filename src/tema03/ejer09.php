@@ -19,6 +19,7 @@
             echo "Factorial <br/>{$num}! = $resultado ";
         else:
             echo "No se puede calcular el factorial de un número negativo o Decimal";
+        
         endif;
     else: ?>
 
