@@ -11,6 +11,7 @@ if (!empty($_GET)):
         foreach ($_SESSION["listado"] as $indice => $item) {
             if (strcasecmp($aBuscar, $item["nombre"]) === 0) {
                 unset($_SESSION["listado"][$indice]);
+               // array_splice($_SESSION["listado"],3,1 );
                 $_SESSION["listado"] = array_values($_SESSION["listado"]);
                 break;
             }
