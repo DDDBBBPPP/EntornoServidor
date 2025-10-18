@@ -16,7 +16,8 @@
         echo "<td>{$item["promedio"]}</td>";
         echo "<td>{$item["estado"]}</td>";
         echo "</tr>";
-    endforeach;
+    endforeach; 
     ?>
     </tbody>
 </table>
+

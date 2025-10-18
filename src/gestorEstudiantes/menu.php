@@ -60,7 +60,7 @@ if (!isset($_SESSION["usuario"])) {
     </div>
 </nav>
 <div class="container padre">
-    <h2>Buenas <span style="color:blue"><?= $_SESSION["usuario"] ?></span>, elija una de las opciones</h2>
+    <h2>Buenas , elija una de las opciones</h2>
     <h5>Agregar un nuevo estudiante</h5>
     <p>Se solicitará nombre y 3 notas separadas por comas. Se comprobará que las
         notas sean entre 0 y 10. Si no se hace correctamente, se indicará con un mensaje de error.
