@@ -6,7 +6,7 @@ if(empty($_SESSION)):
 $_SESSION["videojuegos"]= $videojuegos;
 $_SESSION["accion"] = null;
 endif;
-?>+
+?>
 
 
 <!doctype html>
