@@ -15,6 +15,7 @@ if (!empty($_POST)):
 
     $_SESSION["productos"] = array_values($_SESSION["productos"]);
 
+
     header("location:../menu.php");
     exit;
 else:

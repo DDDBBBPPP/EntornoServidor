@@ -1,4 +1,4 @@
-<!DOCTYPE hmtl>
+<!doctype html>
 <html lang="es">
 <head>
     <title>¡Hola mundo! en PHP</title>

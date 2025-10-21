@@ -76,7 +76,6 @@ if (!isset($_SESSION["usuario"])) {
                 }
             }
         }
-
         if (!$encontrado): ?>
             <div class="alert alert-danger text-center mt-4" role="alert">
                 No existe tal usuario. Verifique el nombre ingresado.

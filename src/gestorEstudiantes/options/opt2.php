@@ -82,6 +82,7 @@ if (!isset($_SESSION["usuario"])) {
             ?>
             </tbody>
         </table>
+    fecha
     <?php endif;
     ?>
 </div>

@@ -1,9 +1,32 @@
-array_splice() Remove a portion of the array and replace it with something else
-🔹 array_splice() elimina (o reemplaza) una parte del array.
-El primer argumento: el array
+<?php
+
+$frutas = ["manzana", "banana", "cereza", "durazno", "kiwi"];
+
+// Eliminar 2 elementos a partir del índice 1
+array_splice($frutas, 1, 2);
+
+print_r($frutas);
+?>
+Array
+(
+[0] => manzana
+[1] => durazno
+[2] => kiwi
+)
 
 
-El segundo: la posición inicial (no la clave original, sino el índice numérico)
+<?php
+$frutas = ["manzana", "banana", "cereza", "durazno"];
 
+// Reemplazar "banana" y "cereza" por "pera" y "uva"
+array_splice($frutas, 1, 2, ["pera", "uva"]);
 
-El tercero: cuántos elementos eliminar
+print_r($frutas);
+?>
+Array
+(
+[0] => manzana
+[1] => pera
+[2] => uva
+[3] => durazno
+)

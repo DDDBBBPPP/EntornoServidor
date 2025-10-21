@@ -3,7 +3,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav w-100 justify-content-around">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    <a class="nav-link" aria-current="page" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./options/opt1.php">Agregar usuario</a>
