@@ -22,8 +22,6 @@ var_dump($cuenta);
 echo "<br/>";
 var_dump($cuenta->retirar(420));
 echo "<br/>";
-var_dump($cuenta);
-echo "<br/>";
 
 //Mostrar info de titular
 echo $cuenta->titular;
