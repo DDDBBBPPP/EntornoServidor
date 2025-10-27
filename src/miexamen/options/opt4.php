@@ -6,7 +6,7 @@ if (!empty($_POST)):
     foreach ($_SESSION["videojuegos"] as $i => $item):
         if ($_POST["codigo"] == $item["codigo"]):
            // unset($item[$i]);
-           array_splice($_SESSION["videojuegos"], 1, 1);
+           array_splice($_SESSION["videojuegos"], $i, 1);
         endif;
     endforeach;
     //$_SESSION["videojuegos"] = array_values($_SESSION["videojuegos"]);

@@ -220,4 +220,7 @@ $pares = miFiltro($numeros, function($cha){
 });
 
 print_r($pares);
+is_null()
 */
+
+

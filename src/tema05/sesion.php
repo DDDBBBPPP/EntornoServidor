@@ -37,3 +37,5 @@ $_SESSION["fondo"] = $_GET["fondo"]??$_SESSION["fondo"]??"#fff";
 </form>
 </body>
 </html>
+
+
