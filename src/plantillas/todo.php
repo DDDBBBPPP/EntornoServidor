@@ -227,6 +227,24 @@ is_null()
 MAYUSCULA la primera letra mayuscula.
 
 ucfirst(string);
+
+
+match($puntuacion >=0) {
+   // $puntuacion<0 => "El valor es erróneo",
+    $cambio["peseta"] => "Novato",
+    $puntuacion<70  =>  "Intermedio",
+    $puntuacion<90  =>  "Avanzado",
+    $puntuacion<101 =>  "Excelente",
+    default         => "El valor es erróneo"
+};
+// este esta mejor creo
+ $porcentaje = match (true) {
+                $this->saltos < 5 => 0.002,
+                $this->saltos < 10 => 0.003,
+                $this->saltos < 30 => 0.004,
+                $this->saltos >= 30 => 0.005,
+                default => 1
+            };
 */
 
 
