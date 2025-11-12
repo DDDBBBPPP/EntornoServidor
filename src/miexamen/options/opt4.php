@@ -11,7 +11,7 @@ if (!empty($_POST)):
     endforeach;
     //$_SESSION["videojuegos"] = array_values($_SESSION["videojuegos"]);
     $_SESSION["accion"] = "Borrar";
-    header("Location: ../index.php");
+    header("Location: ../formulario.php");
     exit;
 else:
     ?>

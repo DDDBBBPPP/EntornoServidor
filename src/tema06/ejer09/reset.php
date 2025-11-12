@@ -2,8 +2,6 @@
 session_start();
 $_SESSION = [];
 session_destroy();
-header("Location: ../formulario.php");
+header("location:index.php");
+
 ?>
-
-
-

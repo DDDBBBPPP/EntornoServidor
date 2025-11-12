@@ -116,6 +116,8 @@ echo $clave; 2
 
 
 htmlspecialchars() Convert special characters to HTML entities
+htmlspecialchars_decode(). La inversa
+MUY UTIL PARA SERIALIZE.
 <strong> sale mas polluo
 
     trim() Strip whitespace (or other characters) from the beginning and end of a string

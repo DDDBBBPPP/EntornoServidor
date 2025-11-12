@@ -21,7 +21,7 @@ if (!$duplicado):
 
     array_push($_SESSION["videojuegos"], $nuevo);
     $_SESSION["accion"] = "Añadir";
-    header("Location: ../index.php");
+    header("Location: ../formulario.php");
     exit;
 else:
     $alerta = true;
