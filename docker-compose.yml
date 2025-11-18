@@ -5,7 +5,7 @@ services:
   # servicio WEB
   web:
     container_name: dwes-web
-    image: php:8.4-apache
+    build: .
     volumes:
       - ./src:/var/www/html
     ports:

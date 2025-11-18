@@ -31,5 +31,4 @@ abstract class Producto
         return self::$totalProductos;
     }
 
-
 }

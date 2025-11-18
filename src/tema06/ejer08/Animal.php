@@ -8,6 +8,7 @@ class Animal
         get {
             $resultado = $this->edad;
             if (strcasecmp($this->habitat, "selva") or strcasecmp($this->habitat, "selva")):
+                //SE PUEDE HACER CON UN in_array TAMBIÉN
                 $resultado += $resultado + 2;
             endif;
             return $resultado;

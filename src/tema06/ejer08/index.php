@@ -24,7 +24,7 @@ echo "Mostramos otra vez a simba y despues a pumba";
 echo $simba ."<br/>";
 echo $pumba ."<br/>";
 
-$pumba->crecer(5);
+$pumba->crecer(0);
 echo "<br/>";
 echo "Mostramos otra vez a simba y despues a pumba";
 echo $simba ."<br/>";

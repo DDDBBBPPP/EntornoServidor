@@ -24,7 +24,7 @@ class Leon extends Animal
     public function cazar(): bool
     {
         $resultado = false;
-        $valor = rand(0, 1);
+        $valor = rand(0, 1) ; // O mt_rand(0,1) para mejor aleatoriedad
         if ($valor == 1):
             if($this->peso>0)$this->peso -= ($this->peso*0.02);
             echo "Cazado con éxito y ha perdido un 2% de peso si lo tenía, ahora pesa " . $this->peso;
@@ -54,6 +54,7 @@ class Leon extends Animal
             echo "Ñam Ñam Ñam<br>";
         }
     }
+
 
 }
 
