@@ -12,6 +12,4 @@
        private string $email;
        private string $password;
 
-
-
     }
