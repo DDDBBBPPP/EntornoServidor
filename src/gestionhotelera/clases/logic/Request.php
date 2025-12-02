@@ -1,19 +1,17 @@
 <?php
 
-    namespace Clases\Logic ;
+namespace Clases\Logic;
 
-    final class Request
+class Request
+{
+    public static function post(string $campo): ?string
     {
-
-        private function __construct() { }
-
-        /**
-         * @param string $url
-         * @return void
-         */
-        public static function redirect(string $url): never
-        {
-            header("Location: {$url}") ;
-            exit() ;
-        }
+        return $_POST[$campo] ?? null;
     }
+
+    public static function redirect(string $ruta): void
+    {
+        header("Location: $ruta");
+        exit;
+    }
+}

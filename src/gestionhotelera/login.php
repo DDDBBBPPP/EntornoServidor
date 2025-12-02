@@ -1,46 +1,49 @@
 <?php
-session_start();
+require_once "autoload.php";
 
-if (!empty($_POST)):
+use Clases\Logic\BaseDatos;
+use Clases\Logic\Sesion;
+use Clases\Logic\Request;
+
+Sesion::iniciar();
+
+if (Sesion::get("usuario")) {
+    Request::redirect("index.php");
+}
+
+if (!empty($_POST)) {
 
     try {
-        $dns = "mysql:host=localhost;dbname=hotel;charset=utf8;";
-        $pdo = PDO::connect($dns, "root", "root");
+        $pdo = BaseDatos::conectar();
+
+        $email    = Request::post("email");
+        $password = Request::post("password");
+
+        $sql = "SELECT * FROM usuarios WHERE email = :email AND password = :pass";
+        $stmt = $pdo->prepare($sql);
+
+        $stmt->bindParam(":email", $email);
+        $stmt->bindParam(":pass", $password);
+        $stmt->execute();
+
+        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($usuario) {
+
+            Sesion::set("usuario", $usuario);
+            Sesion::set("tiempo", time());
+
+            Request::redirect("index.php");
+
+        } else {
+            $error = "Usuario o contraseña incorrectos";
+        }
 
     } catch (PDOException $pdoe) {
-        die("**ERROR: " . $pdoe->getMessage());
+        $error = "Error al conectar con la base de datos.";
     }
-
-    $email = addslashes($_POST["email"]);
-    $password = addslashes($_POST["password"]);
-
-    $sql = "SELECT * FROM usuarios WHERE email = :email AND password = :pass";
-    $pdop = $pdo->prepare($sql);
-
-    $pdop->bindValue(":email", $email);
-    $pdop->bindValue(":pass", $password);
-    $pdop->execute();
-
-    // Fetch normal, sin usar clase
-    $usuario = $pdop->fetch(PDO::FETCH_ASSOC);
-
-    if ($usuario) {
-
-        // Guardar datos en sesión
-        $_SESSION["usuario"] = $usuario["nombre"];
-        $_SESSION["id_usuario"] = $usuario["id_usuario"];
-        $_SESSION["tipo_usuario"] = $usuario["tipo_usuario"];
-
-        header("Location: index.php");
-        exit;
-
-    } else {
-        $error = "Usuario o contraseña incorrectos";
-    }
-
-endif;
+}
 ?>
-
 <!doctype html>
 <html lang="es">
 <head>
@@ -55,6 +58,7 @@ endif;
     </style>
 </head>
 <body>
+<!-- TU HTML COMPLETO TAL CUAL LO TENÍAS -->
 <div class="container vh-100 d-flex justify-content-center align-items-center">
     <div class="card shadow p-4" style="max-width: 430px; width: 100%;">
 
@@ -76,7 +80,6 @@ endif;
                 <input id="password" type="password" name="password" required class="form-control">
             </div>
 
-            <!-- MENSAJE DE ERROR AQUÍ MISMO -->
             <?php if (isset($error)): ?>
                 <div class="alert alert-danger text-center mt-3 mb-1">
                     <?= $error ?>
@@ -99,4 +102,3 @@ endif;
 </div>
 </body>
 </html>
-

@@ -1,7 +1,7 @@
 <?php
-session_start();
-$_SESSION = [];
-session_destroy();
-header("location: login.php");
+require_once "autoload.php";
 
+use Clases\Logic\Sesion;
 
+Sesion::iniciar();
+Sesion::cerrar(); // destruye sesion y redirige
